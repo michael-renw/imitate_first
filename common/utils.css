@@ -1,0 +1,566 @@
+
+.clearfix::before, .clearfix::after {
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
+.clearfix {
+}
+.transfer-notification {
+    background: #f9f6ed none repeat scroll 0 0;
+    border: 1px solid #c7b6ae;
+    color: #7d5949;
+    height: 32px;
+    line-height: 32px;
+    margin: 10px 0;
+    overflow: hidden;
+    text-align: center;
+}
+.transfer-notification .js-jump-bind {
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    margin: 4px 4px 0 0;
+    padding: 0 5px;
+}
+.transfer-notification .js-jump-bind:hover {
+    text-decoration: none;
+}
+#wp.transfer-wp {
+    padding-top: 0;
+    width: 1120px !important;
+}
+.float-right {
+    float: right;
+}
+.ui-login-wrapper .ui-dialog {
+    margin: 30px auto;
+    padding: 30px 0;
+}
+.ui-login-dialog iframe {
+    display: inline;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+.ui-dialog {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #dedede;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(50, 42, 42, 0.11);
+    margin: 0 auto;
+    min-height: 150px;
+    width: 436px;
+}
+.ui-dialog .dialog-header {
+    border-radius: 8px;
+    overflow: hidden;
+}
+.ui-dialog .tabs {
+    overflow: hidden;
+}
+.ui-dialog .tabs li {
+    border: 1px solid #e0e0e0;
+    color: #989898;
+    cursor: pointer;
+    float: left;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    width: 186px;
+}
+.ui-dialog .tabs li.active {
+    background: #ccc linear-gradient(#d0d0d0, #c4c4c4) repeat scroll 0 0;
+    border: 1px solid #b3b3b3;
+    color: #fff;
+    width: 187px;
+}
+.ui-dialog .tabs li.left {
+    border-radius: 8px 0 0 8px;
+    border-right: 0 none;
+}
+.ui-dialog .tabs li.right {
+    border-left: 0 none;
+    border-radius: 0 8px 8px 0;
+}
+.ui-dialog .tabs li.left.active {
+    border-right: 1px solid #b3b3b3;
+}
+.ui-dialog .tabs li.right.active {
+    border-left: 1px solid #b3b3b3;
+}
+.ui-dialog .contents {
+    width: 100%;
+}
+.ui-dialog .content {
+    display: none;
+    min-height: 150px;
+    position: relative;
+}
+.ui-dialog .content.active {
+    display: block;
+}
+.ui-dialog .dialog-line {
+    background: rgba(0, 0, 0, 0) url("../line.png") repeat-x scroll left top;
+    height: 1px;
+    margin: 0 30px;
+    overflow: hidden;
+}
+.ui-dialog .dialog-footer {
+    padding: 25px 0 0;
+}
+.ui-dialog .dialog-footer .warning {
+    color: #d13732;
+    line-height: 20px;
+    text-align: center;
+}
+.ui-login-wrapper .ui-dialog iframe {
+    display: inline;
+    height: 560px;
+    left: 0;
+    position: absolute;
+    top: -30px;
+    width: 737px;
+}
+.ui-login-wrapper .ui-dialog .dialog-header {
+    margin: 0 30px;
+}
+.ui-login-wrapper .ui-dialog .dialog-footer {
+    margin: 0 30px;
+}
+.ui-dialog .content.content-login {
+    height: 547px;
+}
+.ui-dialog .content-login.authcode {
+    height: 610px;
+}
+.ui-dialog .content-login.authcode iframe {
+    height: 630px;
+}
+.ui-dialog .content-discuz-login.content-discuz-forgetpwd {
+    height: 300px !important;
+}
+.ui-dialog .content.content-register {
+    height: 550px;
+}
+.ui-dialog .rfm {
+    border: medium none;
+    margin: 15px 0;
+    overflow: hidden;
+    width: auto;
+}
+.ui-dialog .rfm.ui-form-logo {
+    margin: 50px 0;
+    text-align: center;
+}
+.ui-dialog .rfm th, .ui-dialog .rfm td {
+    padding: 0;
+}
+.nfl .f_c {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+}
+.fwin .ui-dialog .rfm, .nfl .f_c .ui-dialog .rfm {
+    width: auto;
+}
+.ui-form {
+    margin: 0 30px;
+}
+.ui-form .ui-form-control {
+    background: #f9f9f9 url("../input-bg.png") repeat-x scroll 0 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    opacity: 0.618;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in 0s;
+}
+.ui-form .ui-form-control:hover {
+    opacity: 1;
+}
+.ui-form .ui-form-control span {
+    display: block;
+    float: left;
+}
+.ui-form .ui-form-control .icon {
+    border-right: 1px solid #ccc;
+    height: 50px;
+    width: 50px;
+}
+.ui-form .ui-form-control .icon {
+    background: rgba(0, 0, 0, 0) url("../dialog-input-icons.png") no-repeat scroll 0 0;
+}
+.ui-form .ui-form-control .icon.icon-username {
+    background-position: 0 0;
+}
+.ui-form .ui-form-control .icon.icon-password {
+    background-position: -48px 0;
+}
+.ui-form .ui-form-control .icon.icon-captcha {
+    background-position: -96px 0;
+}
+.ui-form .ui-form-control .icon.icon-email {
+    background-position: -144px 0;
+}
+.ui-form .ui-form-control .icon.icon-question {
+    background-position: -186px 0;
+}
+.ui-form .ui-form-control .input-control {
+    position: relative;
+    width: 300px;
+}
+.ui-form .ui-form-control input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    outline: medium none;
+    padding: 0 10px;
+    width: 100%;
+}
+.ui-form .ui-form-control .error {
+    background-color: #81a5e3;
+    border-radius: 4px;
+    color: #fff;
+    display: none;
+    padding: 2px 7px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+.ui-form .ui-form-control .select-control {
+    width: 313px;
+}
+.ui-form .ui-form-control .select-control select {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    font-size: 16px;
+    font-weight: normal;
+    height: 50px;
+    outline: medium none;
+    text-indent: 10px;
+    width: 100%;
+}
+@media not all {
+.ui-form .ui-form-control .select-control {
+    background-image: url("$_G[\'static_url\']static/image/common/webkit-select-arrow.png");
+    background-position: 296px 17px;
+    background-repeat: no-repeat;
+}
+.ui-form .ui-form-control .select-control select {
+}
+}
+.ui-form .rfm.on .ui-form-control {
+    border: 1px solid #9cbaef;
+    opacity: 1;
+}
+.form-discuz-forgetpwd {
+    display: none;
+}
+.btn-blue-xs {
+    background: rgba(0, 0, 0, 0) linear-gradient(#739fe1, #5f7ed7) repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px #92b6ec inset, 0 0 2px #627dca inset, 0 -2px 3px #4c69b8 inset;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    height: 48px;
+    line-height: 48px;
+    outline: medium none;
+    text-align: center;
+    text-shadow: 0 -1px 0 #4f70b3;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+}
+.btn-blue-xs:hover {
+    box-shadow: 0 1px 3px #83a9e1 inset, 0 0 2px #627dca inset, 0 -2px 3px #5a77c7 inset, 0 0 100px rgba(48, 77, 147, 0.4) inset;
+    text-decoration: none;
+}
+.btn-blue-xs:active {
+    box-shadow: 0 1px 3px #83a9e1 inset, 0 0 2px #627dca inset, 0 -2px 3px #5a77c7 inset, 0 0 100px rgba(48, 77, 147, 0.4) inset;
+    text-decoration: none;
+}
+.transfer-wrapper .user-wrapper {
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 35px;
+    overflow: hidden;
+    padding: 0 0 20px;
+}
+.transfer-wrapper .user-avatar {
+    float: left;
+    margin-right: 20px;
+    padding: 20px 0 0;
+}
+.transfer-wrapper .user-avatar img {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px #d8d8d8;
+    height: 55px;
+    padding: 2px;
+    width: 55px;
+}
+.transfer-wrapper .user-account {
+    float: left;
+    line-height: 30px;
+    padding: 20px 0 0;
+}
+.transfer-wrapper .user-logout {
+    float: right;
+    margin: 55px 0 0;
+}
+.transfer-wrapper .user-account, .transfer-wrapper .user-logout {
+    color: #c4c4c4;
+    font-size: 16px;
+}
+.transfer-wrapper .bind-wrapper {
+    margin-top: 100px;
+    min-height: 660px;
+}
+.transfer-wrapper .info-wrapper {
+    background: rgba(0, 0, 0, 0) url("../transfer-logo.png") no-repeat scroll center top;
+    float: left;
+    margin: 20px 0 0 80px;
+    min-height: 110px;
+    padding-top: 170px;
+    width: 426px;
+}
+.transfer-wrapper .info-wrapper.info-bbs-wrapper {
+    background: rgba(0, 0, 0, 0) url("../transfer-bbs-logo.png") no-repeat scroll center top;
+}
+.transfer-wrapper .info-wrapper h4 {
+    color: #989898;
+    font-size: 24px;
+    font-weight: normal;
+    padding: 0 0 15px;
+    text-align: center;
+}
+.transfer-wrapper .info-wrapper p {
+    color: #989898;
+    font-size: 14px;
+    padding: 0 20px;
+}
+.transfer-wrapper .login-transfer-wrapper {
+    position: relative;
+}
+.transfer-wrapper .content-cloud-login {
+    height: 275px;
+}
+.transfer-wrapper .content-cloud-login.authcode {
+    height: 330px;
+}
+.transfer-wrapper .content-cloud-register {
+    height: 480px;
+}
+.transfer-wrapper .content-cloud-register.authcode {
+    height: 530px;
+}
+.transfer-wrapper .footer-wrapper a {
+    color: #c4c4c4;
+}
+.transfer-wrapper .footer-wrapper a:hover {
+    text-decoration: none;
+}
+.login-transfer-wrapper .ui-dialog {
+    padding: 30px 20px;
+    width: 376px;
+}
+.login-transfer-wrapper .ui-dialog iframe {
+    display: inline;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 757px;
+}
+.login-transfer-wrapper .user-bind-title {
+    color: #7f7f7f;
+    font-size: 20px;
+    margin-bottom: 7px;
+    margin-top: 4px;
+    text-align: center;
+}
+.ui-dialog .ui-dialog-message {
+    padding: 30px;
+    text-align: center;
+}
+.ui-dialog-message h3 {
+    color: #989898;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 40px 0 30px;
+}
+.ui-dialog-message p {
+    color: #7d7d7d;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 0 50px;
+}
+.ui-dialog-message .btn-blue-xs {
+    color: #fff;
+    display: block;
+    margin-top: 40px;
+}
+.dialog-transfer-success {
+    display: none;
+}
+.ui-dialog.ui-dialog-popup {
+    background-color: #fff;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    z-index: 9999;
+}
+.ui-dialog-mask {
+    background: #000 none repeat scroll 0 0;
+    bottom: 0;
+    display: none;
+    left: 0;
+    opacity: 0.618;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9998;
+}
+.transfer-bbs-wrapper .ui-form {
+    margin: 0;
+}
+.transfer-bbs-wrapper .content-bbs-register .rfm {
+    margin: 20px 0;
+}
+.transfer-bbs-wrapper .user-wrapper {
+    padding: 0 0 15px !important;
+}
+.transfer-bbs-wrapper .user-account {
+    float: none !important;
+}
+.transfer-bbs-wrapper .user-logout {
+    float: right;
+    margin: 0 !important;
+}
+.transfer-wrapper .footer-wrapper {
+    border-top: 1px solid #dedede;
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    margin: 35px 0;
+    text-align: right;
+    width: 100%;
+}
+.ui-dialog .content-bbs-login {
+}
+.ui-dialog .content-bbs-register {
+    height: 195px;
+}
+.ui-dialog .content-bbs-register .tips {
+    color: #989898;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 5px 0 0;
+}
+.ui-dialog .dialog-footer .user-jump-index {
+    color: #949494;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+}
+.ui-dialog .dialog-footer .user-jump-index:hover {
+    text-decoration: none;
+}
+.forgetpwd-wrapper {
+    margin: 150px auto;
+}
+.forgetpwd-wrapper .ui-dialog .dialog-header {
+    background: rgba(0, 0, 0, 0) url("../dialog-radius-top-bg.png") repeat-x scroll 0 0;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 6px #d1d1d1;
+    height: 60px;
+    overflow: hidden;
+}
+.forgetpwd-wrapper .ui-dialog .dialog-header h4 {
+    border-radius: 8px 8px 0 0;
+    color: #666;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 60px;
+    text-align: center;
+}
+.forgetpwd-wrapper .ui-dialog .rfm.mbw {
+    margin-top: 30px;
+}
+.alert_info {
+    padding-top: 14px;
+}
+.transfer-wrapper .info-wrapper .info-wrapper-login {
+    display: block;
+}
+.transfer-wrapper .info-wrapper .info-wrapper-register {
+    display: none;
+}
+.transfer-wrapper .info-wrapper.info-bbs-wrapper .info-wrapper-login {
+    display: none;
+}
+.transfer-wrapper .info-wrapper.info-bbs-wrapper .info-wrapper-register {
+    display: block;
+}
+.ui-message {
+    border-radius: 4px;
+    display: none;
+    left: 50%;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    z-index: 501;
+}
+.ui-message p {
+    background: #a7a7a7 none repeat scroll 0 0;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.input-tips {
+    color: #cecece;
+    font-size: 16px;
+    left: 12px;
+    position: absolute;
+    top: 14px;
+}
+.ui-dialog .rfm .rfm-captcha {
+    float: left;
+    overflow: visible;
+    position: relative;
+    width: 263px;
+}
+.ui-dialog .rfm .input-captcha-code {
+    border: 1px solid #dbdbdb;
+    border-radius: 9px;
+    cursor: pointer;
+    float: left;
+    height: 50px;
+    margin-left: 10px;
+    width: 101px;
+}
+.ui-dialog .rfm .input-captcha-code img {
+    margin-top: 7px;
+    max-width: 101px;
+}
+.content-bbs-login .ui-form .input-captcha-panel {
+    left: -235px;
+}
+.content-bbs-login .ui-form .input-captcha-panel .delta {
+    left: auto;
+    right: -4px;
+}
+.content-bbs-login .ui-form .input-captcha-panel .deltapatch {
+    left: auto;
+    right: 1px;
+    top: 8px;
+}
