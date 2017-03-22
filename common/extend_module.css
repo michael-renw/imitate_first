@@ -1308,6 +1308,9 @@ a.icon_up:hover {
     margin-right: 8px;
     white-space: nowrap;
 }
+.block_banner{
+    margin: 0 !important;
+}
 
 
 

@@ -73,7 +73,7 @@
 			<script type="text/javascript">setTimeout(setShortcut, 2000);</script>
 		<!--{/if}-->
 		<!-- 注释 顶部导航 -->
-		<div id="toptb" class="cl" style="display: none;">
+		<div id="toptb" class="cl" style="display: block;">
 			<!--{hook/global_cpnav_top}-->
 			<div class="wp">
 			<!-- 注释 左侧 -->
@@ -144,13 +144,13 @@
 		<!--{/if}-->
 
 		<!--{ad/headerbanner/wp a_h}-->
-		<div class="header-sm">
-			<div class="wp">
+		<div class="header-sm"> 
 				<div class="hdc cl" style="display: none;">
 					<!--{eval $mnid = getcurrentnav();}-->
 					<!-- 注释 logo信息 -->
 					<h2><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h2>
 					<!-- 注释 登录注册及个人信息页面引入 -->
+
 					<!--{template common/header_userstatus}-->
 				</div>
 
@@ -159,12 +159,16 @@
 					<a style="display: none;" href="javascript:;" id="qmenu" onmouseover="delayShow(this, function () {showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});showForummenu($_G[fid]);})">{lang my_nav}</a>
 					<div class="container-sm clearfix">
 						<h1><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h1>
+
+						<div class="user"><!--{template common/header_userstatus}--></div>
+						
 						<!-- 注释 主导航 -->
 					<ul class="header-menu">
 						<!--{loop $_G['setting']['navs'] $nav}-->
 							<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="a" {/if}$nav[nav]></li><!--{/if}-->
 						<!--{/loop}-->
 					</ul>
+					
 					</div>
 					
 					<!--{hook/global_nav_extra}-->
@@ -194,123 +198,15 @@
 				</div>
 				<!--{ad/subnavbanner/a_mu}-->
 				<!-- 注释 搜索文件引入 -->
-				<!--{subtemplate common/pubsearchform}-->
-			</div>
+				<div class="location">
+					<div class="container-sm clearfix">
+						<!--{subtemplate common/pubsearchform}-->
+					</div>
+				</div>
+				
+			
 		</div>
 
 		<!--{hook/global_header}-->
 	<!--{/if}-->
 
-<!-- 临时分割线啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 -->
-
-
-<div id="toptb" class="cl" style="display: none;">
-<div class="wp">
-<div class="z"><script type="text/javascript">var _speedMark = new Date();</script></div>
-<div class="y">
-<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="开启辅助访问" class="switchblind">开启辅助访问</a>
-</div>
-</div>
-</div>
-
-<div id="qmenu_menu" class="p_pop blk" style="display: none;">
-<div class="ptm pbw hm">
-请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br />没有帐号？<a href="member.php?mod=register" class="xi2 xw1">立即注册</a>
-</div>
-</div><div class="header-sm">
-<div class="header-main">
-<div class="container-sm clearfix">
-<h1>
-<a href="/" title="锤子科技官方社区">
-锤子科技官方社区
-</a>
-</h1>
-
-<!-- use login status -->
-<div class="user">    <script src="http://bbs-static.smartisan.cn/static/js/logging.js?lQc" type="text/javascript"></script>
-    <form autocomplete="off" id="lsform" class="ui-member">
-    <div class="fastlg cl">
-
-
-        <div>
-         <span class="xi2">
-            <a id="user-login" href="member.php?mod=logging&amp;action=login&amp;referer=" class="xi2">登录</a>
-        </span>
-         <span class="pipe">|</span>
-         <span class="xi2">
-            <a id="user-register" href="member.php?mod=register&amp;referer=">注册</a>
-        </span>
-        </div>
-
-    </div>
-    </form>
-
-    </div>
-
-
-					
-					<!-- 注释 主导航 -->
-					<ul class="header-menu">
-						<!--{loop $_G['setting']['navs'] $nav}-->
-							<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="a" {/if}$nav[nav]></li><!--{/if}-->
-						<!--{/loop}-->
-					</ul>
-					<!--{hook/global_nav_extra}-->
-				
-
-<!--<div class="user">
-<img src="img/user-portrait.png">
-<h5>HarryZhang</h5>
-</div>-->
-</div>
-
-<!-- important { -->
-<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><!-- } -->
-
-
-</div>
-<div id="forumList" class="header-sub">
-<div class="container-sm">
-
-
-</div>
-</div>
-
-
-
-<div class="location">
-<div class="container-sm clearfix"><div id="scbar" class="cl">
-<form id="scbar_form" method="post" autocomplete="off" onsubmit="searchFocus($('scbar_txt'))" action="search.php?searchsubmit=yes" target="_blank">
-<input type="hidden" name="mod" id="scbar_mod" value="search" />
-<input type="hidden" name="formhash" value="cad33275" />
-<input type="hidden" name="srchtype" value="title" />
-<input type="hidden" name="srhfid" value="" />
-<input type="hidden" name="srhlocality" value="forum::index" />
-<table cellspacing="0" cellpadding="0">
-<tr>
-<td class="scbar_type_td">
-<a href="javascript:;" id="scbar_type" class="xg1" onclick="showMenu(this.id)" hidefocus="true">搜索</a>
-</td>
-<td class="scbar_txt_td"><input type="text" name="srchtxt" id="scbar_txt" value="请输入搜索内容" autocomplete="off" x-webkit-speech speech /></td>
-<td class="scbar_icon_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
-</tr>
-</table>
-</form>
-</div>
-<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a href="javascript:;" rel="forum" class="curtype">帖子</a></li><li><a href="javascript:;" rel="user">用户</a></li></ul>
-<script type="text/javascript">
-initSearchmenu('scbar', '');
-</script>
-<h2>
-<a href="http://bbs.smartisan.com/forum.php">论坛首页</a><div class="z"></div>
-</h2>
-</div>
-</div>
-
-</div>
-<script type="text/javascript">
-var ua = navigator.userAgent;
-if (ua.match(/iphone|android/i) && (window.location.href.indexOf('noredirect') < 0 && document.cookie.indexOf('go2web') < 0)) {
-   window.location.href = '/m/';
-}
-</script>
