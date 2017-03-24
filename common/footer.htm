@@ -1,4 +1,4 @@
-<div class="footer">
+
 	<!-- 注释 专题判断 -->
 <!--{if empty($topic) || ($topic[usefooter])}-->
 <!-- 注释 站长推荐内容 -->
@@ -59,16 +59,6 @@
 	<!--{hook/global_footer}-->
 
 	<div class="container-sm">
-		
-			<!--{if empty($gid) && ($_G['cache']['forumlinks'][0] || $_G['cache']['forumlinks'][1] || $_G['cache']['forumlinks'][2])}-->
-				<div class="link clearfix">
-					<!--{if $_G['cache']['forumlinks'][2]}-->
-					<ul class="clearfix">
-						$_G['cache']['forumlinks'][2]
-					</ul>
-				<!--{/if}-->
-				</div>
-			<!--{/if}-->
 		
 		<div class="copyright">
 			<h6>Powered by <strong><a href="http://www.discuz.net" target="_blank">Discuz!</a></strong> <em>$_G['setting']['version']</em></h6>
@@ -172,7 +162,7 @@
 	<!--{/if}-->
 </div>
 
-</div>
+
 <script src="http://bbs-static.smartisan.cn/template/smartisan/src/js/jquery-1.11.3.min.js?lQc" type="text/javascript"></script>
 <script src="http://bbs-static.smartisan.cn/template/smartisan/src/js/jquery.qrcode.min.js?lQc" type="text/javascript"></script>
 <script src="http://bbs-static.smartisan.cn/template/smartisan/src/js/qrcode.js?lQc" type="text/javascript"></script>

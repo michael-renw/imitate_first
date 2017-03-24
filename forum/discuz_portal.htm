@@ -1,0 +1,62 @@
+<!--{template common/header}-->
+<style id="diy_style" type="text/css"></style>
+
+<div id="main" class="main clearfix">
+   <div class="container-sm container-banner">
+       <!--[diy=diy]--><div id="diy" class="area"></div><!--[/diy]-->
+   </div>
+  
+   <div class="container-sm clearfix">
+      <div id="newsbox" class="section">
+          <!--[diy=foldable]--><div id="foldable" class="area"></div><!--[/diy]-->
+          <div id="discussBox" class="foldableBox discuss">
+               <h4>热帖推荐<span class="btn-fold"></span></h4>
+               <div class="js-list">
+                  <!--{loop $grids['hot'] $thread}-->
+                  <div class="discuss-box">
+                     <div class="portrait"><a href="home.php?mod=space&uid=$thread[authorid]"><img src="uc_server/avatar.php?uid=$thread[authorid]&size=middle"></a></div>
+                     <div class="discuss-content">
+                        <h5><a href="forum.php?mod=viewthread&tid=$thread[tid]&{if $_GET['archiveid']}archiveid={$_GET['archiveid']}&{/if}extra=$extra"$thread[highlight]{if $thread['isgroup'] == 1 || $thread['forumstick']} target="_blank"{else} onclick="atarget(this)"{/if} class="s xst">$thread[subject]</a>
+                        </h5>
+                        <ul class="post-info">
+                           <li class="author"><a href="home.php?mod=space&uid=$thread[authorid]" c="1"{if $groupcolor[$thread[authorid]]} style="color: $groupcolor[$thread[authorid]];"{/if}>$thread[author]</a></li>
+                           <li class="time">发表于 $thread[dateline]</li>
+                           <li class="review">$thread[replies]</li>
+                           <li class="browse">$thread[views]</li>
+                        </ul>
+                     </div>
+                  </div>
+                     
+                  <!--{/loop}-->
+               </div>
+               <div class="forum-list-pager js-pager">
+                  
+               </div>
+         </div>
+      </div>
+      <div class="sidebar">
+          <!--[diy=sidediy]--><div id="sidediy" class="area"></div><!--[/diy]-->
+      </div>
+
+   </div>
+
+
+</div>
+
+ <!--{if empty($gid) && ($_G['cache']['forumlinks'][0] || $_G['cache']['forumlinks'][1] || $_G['cache']['forumlinks'][2])}-->
+   <div class="footer">
+      <div class="container-sm">
+        <div class="link clearfix">
+          <!--{if $_G['cache']['forumlinks'][2]}-->
+          <ul class="clearfix">
+            $_G['cache']['forumlinks'][2]
+          </ul>
+        <!--{/if}-->
+        </div>
+      <!--{/if}-->
+      <!--{template common/footer}--> 
+      </div>
+    </div>
+
+      
+
