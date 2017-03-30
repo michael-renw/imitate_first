@@ -59,7 +59,15 @@
             <!--{subtemplate forum/forumdisplay_list}-->
             <div class="forum-list-pager clearfix"></div>
          </div>
-         <div id="" class="content forum-list-fastpost"></div>
+
+         <!--{if $fastpost}-->
+         <!-- 注释 快速发帖 -->
+            
+             <div id="fastpost" class="content forum-list-fastpost">
+                  <!--{template forum/forumdisplay_fastpost}-->
+             </div>
+         <!--{/if}-->
+        
       </div>
       <div class="sidebar"></div>
    </div>
@@ -90,10 +98,7 @@
 
          <!--{hook/forumdisplay_middle}-->
          <!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
-         <!--{if $fastpost}-->
-         <!-- 注释 快速发帖 -->
-            <!--{template forum/forumdisplay_fastpost}-->
-         <!--{/if}-->
+        
 
          <!--{hook/forumdisplay_bottom}-->
          <!--[diy=diyforumdisplaybottom]--><div id="diyforumdisplaybottom" class="area"></div><!--[/diy]-->
