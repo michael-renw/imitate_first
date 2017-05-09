@@ -1,0 +1,86 @@
+<!--{template common/header}-->
+<!--[name]资讯列表模板[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div  class="main clearfix">
+	<div class="container-sm mtm clearfix">
+		<div class="section">
+			<div class="content">
+				<h4>资讯</h4>
+				<div class="section-content">
+							<!-- 注释 列表内容循环 -->
+					<!--{loop $list['list'] $value}-->
+						<!--{eval $highlight = article_title_style($value);}-->
+						<!--{eval $article_url = fetch_article_url($value);}-->
+						
+						<div class="content-box">
+							<h2><a href="$article_url" target="_blank" $highlight>$value[title]</a> <!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}--></h2>
+							<ul class="post-info">
+								<li class="author">$value[author]</li>
+								<li class="time">发表于$value[dateline]</li>
+								<li class="review">评论数</li>
+								<li class="browse">浏览数</li>
+							</ul>
+							
+							<!--{if $value[pic]}-->
+							<div class="content-picture">
+								<a href=""><img src="$value[pic]" alt="$value[title]"></a>
+							</div>
+							<!--{/if}-->
+							<p>
+								$value[summary]<span> <a target="_blank" href="">查看全文</a></span>
+							</p>
+							<!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $value['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $value['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+								<span class="xg1">
+								<!-- 注释 编辑 删除 -->
+									<span class="pipe">|</span>
+									<label><a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$value[aid]">{lang edit}</a></label>
+									<span class="pipe">|</span>
+									<label><a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$value[aid]" id="article_delete_$value[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a></label>
+								</span>
+								<!--{/if}-->
+						</div>
+
+
+
+					<!--{/loop}-->
+				</div>
+				<div class="forum-list-pager clearfix">
+					<div class="pager-wrapper clearfix">
+					<!--{ad/articlelist/mbm hm/3}--><!--{ad/articlelist/mbm hm/4}-->
+					<!--{if $list['multi']}--><div class="pgs cl">{$list['multi']}</div><!--{/if}-->
+					</div>
+				</div>
+					<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+			</div>
+		</div>
+		
+		<div class="sidebar">
+			
+			<!--[diy=um_article_list_diy1]--><div id="um_article_list_diy1" class="area"></div><!--[/diy]-->
+			<div class="drag">
+			<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+		</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+
+<div class="wp mtn">
+	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<!--{template common/footer}-->

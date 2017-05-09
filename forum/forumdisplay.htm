@@ -48,7 +48,13 @@
                      </div>
                   </div>
                   <div class="forum-list-panel-options clearfix">
-                     <ul></ul>
+                     <ul>
+                        <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]">默认</a></li>
+                        <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=lastpost&orderby=lastpost$forumdisplayadd[lastpost]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['filter'] == 'lastpost'} xw1{/if}">{lang latest}</a></li>
+                        <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=digest&digest=1$forumdisplayadd[digest]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['filter'] == 'digest'} xw1{/if}">{lang digest_posts}</a></li>
+                        <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=reply&orderby=views$forumdisplayadd[view]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" {if $_GET['orderby'] == 'views'}class="xw1"{/if}>{lang views}</a></li>
+                        <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=reply&orderby=replies$forumdisplayadd[reply]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" {if $_GET['orderby'] == 'replies'}class="xw1"{/if}>{lang replies}</a></li>
+                     </ul>
                      <span class="popwin-trigger forum-list-panel-popwin">
                        
                         <span id="atarget" {if $_G['cookie']['atarget'] > 0}onclick="setatarget(-1)" class="y atarget_1"{else}onclick="setatarget(1)" class="y"{/if} title="{lang new_window_thread}">{lang new_window}</span>
@@ -57,7 +63,11 @@
                </div>
             </div>
             <!--{subtemplate forum/forumdisplay_list}-->
-            <div class="forum-list-pager clearfix"></div>
+            <div class="forum-list-pager clearfix">
+               <div class="pager-wrapper clearfix">
+                  $multipage
+               </div>
+            </div>
          </div>
 
          <!--{if $fastpost}-->
@@ -69,10 +79,23 @@
          <!--{/if}-->
         
       </div>
-      <div class="sidebar"></div>
+      <div class="sidebar">
+         <div class="profile">
+            <a href="home.php?mod=spacecp&ac=favorite&type=forum&id=$_G[fid]&handlekey=favoriteforum&formhash={FORMHASH}" class="collect"><i class="icon-fav-star"></i>收藏本版</a>
+            <div class="profile-card">
+               <span class="avatar"><img src="{IMGDIR}/forum{if $forum[folder]}_new{/if}.gif" alt="$forum[name]"></span>
+               <p><span class="name">$_G['forum'][name]</span></p>
+            </div>
+            <ul class="profile-col-3 clearfix">
+               <li><span>今日</span><em>$_G[forum][todayposts]</em></li>
+               <li><span>主题</span><em>$_G[forum][threads]</em></li>
+               <li><span>排名</span><em>$_G[forum][rank]</em></li>
+            </ul>
+         </div>
+         <!--[diy=um_forumdisplay_diy1]--><div id="um_forumdisplay_diy1" class="area"></div><!--[/diy]-->
+      </div>
    </div>
    
-
 </div>
 
 <!--{if $_G['forum']['ismoderator']}-->
@@ -85,27 +108,7 @@
 <div class="wp">
    <!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
 </div>
-<div class="boardnav">
-   <div id="ct" class="wp cl{if $_G['forum']['allowside']} ct2{/if}"{if $leftside} style="margin-left:{$_G['leftsidewidth_mwidth']}px"{/if}>
-  
 
-      <div class="mn">
-         
-
-         
-
-        
-
-         <!--{hook/forumdisplay_middle}-->
-         <!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
-        
-
-         <!--{hook/forumdisplay_bottom}-->
-         <!--[diy=diyforumdisplaybottom]--><div id="diyforumdisplaybottom" class="area"></div><!--[/diy]-->
-      </div>
-      
-   </div>
-</div>
 <!--{if $_G['group']['allowpost'] && ($_G['group']['allowposttrade'] || $_G['group']['allowpostpoll'] || $_G['group']['allowpostreward'] || $_G['group']['allowpostactivity'] || $_G['group']['allowpostdebate'] || $_G['setting']['threadplugins'] || $_G['forum']['threadsorts'])}-->
    <ul class="p_pop" id="newspecial_menu" style="display: none">
    <!-- 注释 发帖菜单 -->
@@ -144,9 +147,6 @@
 </div>
 <!--{if empty($_G['setting']['disfixednv_forumdisplay']) }--><script>fixed_top_nv();</script><!--{/if}-->
 
-<div class="footer">
-   <div class="container-sm">
       <!--{template common/footer}-->
-   </div>
-</div>
+  
 

@@ -1,6 +1,5 @@
 <div id="threadlist" class="tl bm bmw"{if $_G['uid']} style="position: relative;"{/if}>
 	
-	
 	<div class="bm_c">
 		<!--{if empty($_G['forum']['picstyle']) || $_G['cookie']['forumdefstyle']}-->
 			<script type="text/javascript">var lasttime = $_G['timestamp'];var listcolspan= '{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}6{else}5{/if}';</script>
@@ -141,7 +140,7 @@
 														</dd>
 													</dl>
 													<div class="forum-list-item-info">
-														<span><i class="icon-forum-view"></i></span><!--{if $thread['isgroup'] != 1}-->$thread[views]<!--{else}-->{$groupnames[$thread[tid]][views]}<!--{/if}-->
+														<span><i class="icon-forum-view"></i><!--{if $thread['isgroup'] != 1}-->$thread[views]<!--{else}-->{$groupnames[$thread[tid]][views]}<!--{/if}--></span>
 														<span><i class="icon-forum-comment"></i>$thread[allreplies]</span>
 													</div>
 
@@ -374,15 +373,10 @@
 <!--{/if}-->
 <!--{if $multipage && $filter != 'hot'}-->
 	<!--{if !($_G[forum][picstyle] && !$_G[cookie][forumdefstyle])}-->
-		<a class="bm_h" href="javascript:;" rel="$multipage_more" curpage="$page" id="autopbn" totalpage="$maxpage" picstyle="$_G[forum][picstyle]" forumdefstyle="$_G[cookie][forumdefstyle]">{lang next_page_extra}</a>
+		<a style="display: none;" class="bm_h" href="javascript:;" rel="$multipage_more" curpage="$page" id="autopbn" totalpage="$maxpage" picstyle="$_G[forum][picstyle]" forumdefstyle="$_G[cookie][forumdefstyle]">{lang next_page_extra}</a>
 		<script type="text/javascript" src="{$_G[setting][jspath]}autoloadpage.js?{VERHASH}"></script>
 	<!--{else}-->
 		<div id="pgbtn" class="pgbtn"><a href="forum.php?mod=forumdisplay&fid={$_G[fid]}&filter={$filter}&orderby={$_GET[orderby]}{$forumdisplayadd[page]}&{$multipage_archive}&page=$nextpage" hidefocus="true">{lang next_page_extra}</a></div>
 	<!--{/if}-->
 <!--{/if}-->
-<div class="bm bw0 pgs cl">
-	<span id="fd_page_bottom">$multipage</span>
-	<span {if $_G[setting][visitedforums]}id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})"{/if} class="pgb y"><a href="forum.php">{lang return_index}</a></span>
-	<!--{if !$_GET['archiveid']}--><a href="javascript:;" id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"{if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} title="{lang send_posts}"><img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" /></a><!--{/if}-->
-	<!--{hook/forumdisplay_postbutton_bottom}-->
-</div>
+

@@ -1,5 +1,5 @@
 <!--{template common/header}-->
-
+<div id="wp" class="wp">
 <script type="text/javascript">var fid = parseInt('$_G[fid]'), tid = parseInt('$_G[tid]');</script>
 <!--{if $modmenu['thread'] || $modmenu['post']}-->
 	<script type="text/javascript" src="{$_G['setting']['jspath']}forum_moderate.js?{VERHASH}"></script>
@@ -10,12 +10,7 @@
 
 <style id="diy_style" type="text/css"></style>
 <!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
-<!-- 注释 面包屑导航 -->
-<div id="pt" class="bm cl">
-	<div class="z">
-		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em><a href="forum.php">{$_G[setting][navs][2][navname]}</a>$navigation <em>&rsaquo;</em> <a href="forum.php?mod=viewthread&tid=$_G[tid]">$_G[forum_thread][short_subject]</a>
-	</div>
-</div>
+
 
 <!--{hook/viewthread_top}-->
 <!--{ad/text/wp a_t}-->
@@ -36,11 +31,9 @@
 				<button id="newspecial" class="pn pnc" onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]&extra=$extra&sortid=$id'"><strong>{lang i_want}$name</strong></button>
 			<!--{/loop}-->
 		<!--{else}-->
-			<!--{if !$_G['forum_thread']['is_archived']}--><a id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"{if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} href="javascript:;" title="{lang send_posts}"><img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" /></a><!--{/if}-->
+			<!--{if !$_G['forum_thread']['is_archived']}--><a class="btn-default js-needLogin-btn" id="newspecial" {if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} href="javascript:;" title="{lang send_posts}">发帖</a><!--{/if}-->
 		<!--{/if}-->
-		<!--{if $allowpostreply && !$_G['forum_thread']['archiveid']}-->
-			<a id="post_reply" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}"><img src="{IMGDIR}/pn_reply.png" alt="{lang reply}" /></a>
-		<!--{/if}-->
+		
 		<!--{hook/viewthread_postbutton_top}-->
 	</div>
 <!-- 注释 发帖下拉菜单 -->
@@ -379,10 +372,10 @@ $_G['forum_tagscript']
 	$multipage
 	<span class="pgb y"{if $_G['setting']['visitedforums']} id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})"{/if}><a href="$upnavlink">{lang return_forumdisplay}</a></span>
 	<!--{if !$_G['forum_thread']['is_archived']}-->
-		<a id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"{if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} href="javascript:;" title="{lang send_posts}"><img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" /></a>
+		<a class="btn-default" id="newspecialtmp" {if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} href="javascript:;" title="{lang send_posts}">发帖</a>
 	<!--{/if}-->
 	<!--{if $allowpostreply && !$_G['forum_thread']['archiveid']}-->
-		<a id="post_replytmp" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}"><img src="{IMGDIR}/pn_reply.png" alt="{lang reply}" /></a>
+		<a class="btn-default" id="post_replytmp" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}">回复</a>
 	<!--{/if}-->
 </div>
 
@@ -510,4 +503,5 @@ fixed_avatar([<!--{echo implode(',', array_keys($postlist))}-->], {if empty($_G[
 fixed_top_nv();
 <!--{/if}-->
 </script>
+</div>
 <!--{template common/footer}-->

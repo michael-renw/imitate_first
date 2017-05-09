@@ -317,7 +317,7 @@ hr.m0 {
 .showmenu {
     background: rgba(0, 0, 0, 0) url("http://bbs-static.smartisan.cn/static/image/common//arrwd.gif") no-repeat scroll 100% 50%;
     cursor: pointer;
-    padding-right: 16px;
+    padding-right: 0;
     white-space: nowrap;
 }
 #um .showmenu {
@@ -500,7 +500,7 @@ a.pn:hover {
 .sltm {
     background-color: #fff;
     border: 1px solid #ddd;
-    padding: 5px 11px 5px 10px;
+    padding: 0;
     text-align: left;
 }
 .sltm li {
@@ -512,7 +512,7 @@ a.pn:hover {
     color: #537dd7;
 }
 .sltm li.current {
-    color: #f26c4f;
+    color: #f26c4f !important;
 }
 .oshr {
     -moz-border-bottom-colors: none;
@@ -1355,8 +1355,8 @@ a.returnlist:hover, a.returnboard:hover {
     margin-bottom: 10px;
 }
 .bm {
-    background: #fff none repeat scroll 0 0;
-    border: 1px solid #ebebeb;
+    background: #fff;
+    border: 1 solid #ebebeb;
 }
 .bm_c {
     padding: 10px;
@@ -1389,7 +1389,7 @@ a.returnlist:hover, a.returnboard:hover {
     white-space: nowrap;
 }
 .bmw {
-    border: 1px solid #ebebeb;
+    border: none;
 }
 .bmw .bm_h {
     background: #fcfcfc none repeat scroll 0 0;

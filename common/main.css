@@ -22,7 +22,7 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
     margin-bottom: 10px;
     overflow: hidden;
-    padding-bottom: 13.5px;
+    padding-bottom: 0;
 }
 .sidebar .right-module h4 {
     background: #f5f5f5 linear-gradient(to bottom, #fafafa 0%, #f4f4f4 100%) repeat scroll 0 0;
@@ -415,9 +415,7 @@
 .forum-photography-panel .forum-list-panel-options {
     right: 120px;
 }
-.forum-list-content ul {
-    padding: 10px 0;
-}
+
 .forum-list-content li {
     border-bottom: 1px solid #eee;
     height: 90px;
@@ -692,37 +690,39 @@
 .sidebar .offical-SNS, .sidebar .offical-app {
     padding-bottom: 0;
 }
-.offical-app-list {
+
+
+.thread-list {
     margin: 0 20px -1px;
     overflow: hidden;
 }
-.offical-app-list li {
+.thread-list li {
     border-bottom: 1px solid #f5f5f5;
     height: 96px;
     position: relative;
 }
-.offical-app-list li img {
+.thread-list li img {
     height: 58px;
     position: absolute;
     top: 22px;
     width: 58px;
 }
-.offical-app-list li dl {
+.thread-list li dl {
     left: 76px;
     position: absolute;
     top: 30px;
 }
-.offical-app-list li dt {
+.thread-list li dt {
     font-size: 16px;
 }
-.offical-app-list li dt a:link, .offical-app-list li dt a:visited {
+.thread-list li dt a:link, .thread-list li dt a:visited {
     color: #000;
 }
-.offical-app-list li dd {
+.thread-list li dd {
     color: #999;
     margin-top: 1px;
 }
-.offical-app-list .qr-trigger {
+.thread-list .qr-trigger {
     background-color: #fafafa;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAOFJREFUOBG1k1uSgyAQRYFyZeqy1aVJPJDj9FjqX6hK+nX79gPMy7LUnHOqtaZSSpPa0zTldJx1XY9wj2Pv+57AtEOwa///IdbzhhlkAhQr65cEKRHdzPN8QHIqGJ6o67uTkbxoKO8S3nyDVcdx/G7lGe5SI2LA2Lbt4PkbJQLQ6c75td/w1/zf2tnri4+D9mjbmW0fGz362w7uFmiS/T/N3AgA8fJ8ylYwGUlHYIxZ4CQA8FQFAhK5LRPxcU6CbvZK6lcZRz13cWU06c5PB/EjA9s6wOkISH7ciicmEbM68gNy8KIYL3YjIwAAAABJRU5ErkJggg==");
     background-position: center center;
@@ -1530,6 +1530,8 @@ a {
     height: 460px;
     overflow: hidden;
     position: relative;
+    -webkit-mask-image: url(http://bbs-static.smartisan.cn/template/smartisan/src/img/css-mask.jpg);
+    -webkit-mask-clip: border;
 }
 .main .banner .dot {
     bottom: 28px;
@@ -1599,7 +1601,7 @@ a {
 .main .banner .banner-list li.toRightShow {
     animation: 1s ease 0s normal none 1 running toRightShow;
 }
-.main .banner .banner-list img {
+.main .banner  img {
     height: 460px;
     width: 1120px;
 }

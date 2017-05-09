@@ -1,8 +1,6 @@
 <!--{template common/header}-->
 <style id="diy_style" type="text/css"></style>
-<hr>
-<hr>
-<hr>
+
 <div id="main" class="main clearfix">
    <div class="container-sm container-banner">
        <!--[diy=um_portal_diy1]--><div id="um_portal_diy1" class="area"></div><!--[/diy]-->
@@ -20,7 +18,8 @@
 
       </div>
       <div class="sidebar">
-     
+        
+        
           <!--[diy=um_portal_diy3]--><div id="um_portal_diy3" class="area"></div><!--[/diy]-->
       </div>
 
@@ -28,23 +27,4 @@
 
 </div>
 
-
-
-
-
-
-<div class="footer">
-      <!--{eval $flinks = DB::fetch_all("SELECT * FROM ".DB::table('common_friendlink')." WHERE `type`= '2';");}-->
-<div class="container-sm">
-    <div class="link clearfix">
-        <ul class="clearfix">
-            <!--{loop $flinks $link}-->
-            <li><a href="<!--{$link[url]}-->"><!--{$link[name]}--></a></li>
-            <!--{/loop}-->
-        </ul>
-    </div>
-    <!--{template common/footer}--> 
-</div>
-
-      
-</div>
+  <!--{template common/footer}--> 

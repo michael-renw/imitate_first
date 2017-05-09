@@ -1,16 +1,10 @@
 <!--{template common/header}-->
 <style id="diy_style" type="text/css"></style>
-<hr>
-<hr>
-<hr>
+
 <div class="main forums-page clearfix">
 	<div class="container-sm">
 
-
-
 	<div class="section">
-			
-
 			<!-- 注释 版块列表循环开始 -->
 		<!--{loop $catlist $key $cat}-->
 			<!--{hook/index_catlist $cat[fid]}-->
@@ -52,36 +46,12 @@
 
 		<div class="sidebar">
 			 <!--[diy=um_forum_diy1]--><div id="um_forum_diy1" class="area"></div><!--[/diy]-->
-			 <hr>
-			 <hr>
-			 <hr>
+			 
 			 <!--[diy=um_forum_diy2]--><div id="um_forum_diy2" class="area"></div><!--[/diy]-->
 		</div>
 	</div>
 
 </div>
-
-<!--{if empty($gid) && ($_G['cache']['forumlinks'][0] || $_G['cache']['forumlinks'][1] || $_G['cache']['forumlinks'][2])}-->
-   <div class="footer">
-      <div class="container-sm">
-        <div class="link clearfix">
-          <!--{if $_G['cache']['forumlinks'][2]}-->
-          <ul class="clearfix">
-            $_G['cache']['forumlinks'][2]
-          </ul>
-        <!--{/if}-->
-        </div>
-      <!--{/if}-->
+       
       <!--{template common/footer}--> 
-      </div>
-    </div>
-
-
-
-
-
-    <!-- 下面是测试部分，可以删除 -->
-
-    	
-	
-
+    

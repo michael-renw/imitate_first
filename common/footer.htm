@@ -57,10 +57,41 @@
 	<!--{ad/cornerbanner/a_cn}-->
 
 	<!--{hook/global_footer}-->
-
+<div class="footer">
 	<div class="container-sm">
-		
+		<!--{eval echo $_G['basescript']." ".CURMODULE;}-->
+
+		<!--{if $_G['basescript'] == 'portal' && CURMODULE == 'index'}-->
+
+			<!--{eval $flinks = DB::fetch_all("SELECT * FROM ".DB::table('common_friendlink')." WHERE `type`= '2';");}-->
+			<div class="link clearfix">
+        	<ul class="clearfix">
+            <!--{loop $flinks $link}-->
+            <li><a href="<!--{$link[url]}-->"><!--{$link[name]}--></a></li>
+            <!--{/loop}-->
+        	</ul>
+    		</div>
 		<div class="copyright">
+		<!--{elseif $_G['basescript'] == 'forum' && CURMODULE == 'index'}-->
+			<!--{if empty($gid) && ($_G['cache']['forumlinks'][0] || $_G['cache']['forumlinks'][1] || $_G['cache']['forumlinks'][2])}-->
+
+			        <div class="link clearfix">
+			          <!--{if $_G['cache']['forumlinks'][2]}-->
+			          <ul class="clearfix">
+			            $_G['cache']['forumlinks'][2]
+			          </ul>
+			        <!--{/if}-->
+			        </div>
+			      <!--{/if}-->
+			     <div class="copyright">
+			      
+			    
+		<!--{else}-->
+				<div class="copyright" style="border-top: none;margin-top: 34px;">
+		<!--{/if}-->
+
+
+		
 			<h6>Powered by <strong><a href="http://www.discuz.net" target="_blank">Discuz!</a></strong> <em>$_G['setting']['version']</em></h6>
 			<ul>
 				<!-- 注释 QQ客服添加判断 -->
@@ -79,7 +110,7 @@
 			</ul>
 		</div>
 	</div>
-
+</div>
 <!--{/if}-->
 
 <!--{if !$_G['setting']['bbclosed'] && !$_G['member']['freeze'] && !$_G['member']['groupexpiry']}-->
@@ -162,81 +193,18 @@
 	<!--{/if}-->
 </div>
 
-
-<script src="http://bbs-static.smartisan.cn/template/smartisan/src/js/jquery-1.11.3.min.js?lQc"></script>
-
-<script src="$_G['setting'][siteurl]/$_G['style'][styleimgdir]js/app.js?{VERHASH}"></script>
-<script src="http://bbs-static.smartisan.cn/template/smartisan/src/js/jquery.qrcode.min.js?lQc" ></script>
-<script src="http://bbs-static.smartisan.cn/template/smartisan/src/js/qrcode.js?lQc" ></script>
-<script src="http://bbs-static.smartisan.cn/template/smartisan/src/js/utils.js?lQc" ></script>
-
-<script>
-    (function(jQuery) {
-
-        'use strict';
-        var $ = jQuery.noConflict();
-
-
-        // 隐藏QR码
-        function hideQRBox() {
-            $('#popQR').hide();
-            $('#btnClose').unbind('click', hideQRBox);
-            $('#popMask').unbind('click', hideQRBox);
-        }
-
-        // 弹出QR码
-        $('.qr-trigger').bind('click', function(event) {
-            var target = $(event.currentTarget);
-            var link = target.data('href');
-            var title = target.data('title');
-            var summary = target.data('summary');
-
-            if (title) {
-                $('#popQR').find('.js-title').html(title);
-            } else {
-                $('#popQR').find('.js-title').html('可以直接扫描二维码安装');
-            }
-
-            if (summary) {
-                $('#popQR').find('.js-summary').html(summary);
-            } else {
-                $('#popQR').find('.js-summary').html('用 Smartisan 手机 / 坚果手机可直接通过应用商店<br>下载并安装，其他手机将通过手机浏览器下载 APK 安装');
-            }
-
-            $('#popQR').css({
-                'display': 'block',
-                'height': $(document.body).height()
-            });
-
-            $('#dialogQR').empty().qrcode({
-                render: /msie/.test(navigator.userAgent.toLowerCase())? 'table': 'canvas',
-                correctLevel: QRErrorCorrectLevel.L,
-                width: 256,
-                height: 256,
-                text: link
-            });
-
-            $('#btnClose').bind('click', hideQRBox);
-            $('#popMask').bind('click', hideQRBox);
-        });
-
-        if ($('#forumList').find('ul').size() == 4) {
-            $('#forumList').addClass('four-row');
-        }
-
-
-    })(window.jQuery);
-
-
-</script>
-
-
-<script src="http://bbs-static.smartisan.cn/template/smartisan/src/js/lib/require.js?lQc" type="text/javascript"></script>
-<script src="http://bbs-static.smartisan.cn/template/smartisan/src/js/require-conf.js" type="text/javascript"></script>
-
-<script src="http://bbs-static.smartisan.cn/build/js/index.js?lQc" type="text/javascript"></script>
-
 <script type="text/javascript">checkBlind();</script>
+<script type="text/javascript" src="$_G['style'][styleimgdir]js/index.js?{VERHASH}"></script>
+<script type="text/javascript" src="$_G['style'][styleimgdir]js/jquery.flexslider.js?{VERHASH}"></script>
+
+ <script type="text/javascript">
+   var jQuery = jQuery.noConflict();
+    jQuery(window).load(function(){
+      jQuery('.flexslider').flexslider({
+        animation: "slide"
+      });
+    });
+  </script>
 
 <!--{/if}-->
 <!--{if isset($_G['makehtml'])}-->
