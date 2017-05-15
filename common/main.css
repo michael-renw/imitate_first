@@ -1326,8 +1326,6 @@ a {
     opacity: 0.62;
     position: fixed;
     right: 20px;
-    transform: translate3d(0px, 120px, 0px);
-    transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
     width: 64px;
     z-index: 200;
 }

@@ -112,7 +112,7 @@
 	</div>
 </div>
 <!--{/if}-->
-
+<div id="back-top" class="back-top"></div>
 <!--{if !$_G['setting']['bbclosed'] && !$_G['member']['freeze'] && !$_G['member']['groupexpiry']}-->
 	<!--{if $_G[uid] && !isset($_G['cookie']['checkpm'])}-->
 	<script type="text/javascript" src="home.php?mod=spacecp&ac=pm&op=checknewpm&rand=$_G[timestamp]"></script>
@@ -176,27 +176,12 @@
 
 <!--{eval userappprompt();}-->
 <!--{if $_G['basescript'] != 'userapp'}-->
-<!-- 注释 返回顶部列表等 -->
-<div id="scrolltop">
-	<!--{if $_G[fid] && $_G['mod'] == 'viewthread'}-->
-	<span><a href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&extra=$_GET[extra]&page=$page{if $_GET[from]}&from=$_GET[from]{/if}" onclick="showWindow('reply', this.href)" class="replyfast" title="{lang fastreply}"><b>{lang fastreply}</b></a></span>
-	<!--{/if}-->
-	<span hidefocus="true"><a title="{lang scrolltop}" onclick="window.scrollTo('0','0')" class="scrolltopa" ><b>{lang scrolltop}</b></a></span>
-	<!--{if $_G[fid]}-->
-	<span>
-		<!--{if $_G['mod'] == 'viewthread'}-->
-		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]" hidefocus="true" class="returnlist" title="{lang return_list}"><b>{lang return_list}</b></a>
-		<!--{else}-->
-		<a href="forum.php" hidefocus="true" class="returnboard" title="{lang return_forum}"><b>{lang return_forum}</b></a>
-		<!--{/if}-->
-	</span>
-	<!--{/if}-->
-</div>
+
 
 <script type="text/javascript">checkBlind();</script>
 <script type="text/javascript" src="$_G['style'][styleimgdir]js/index.js?{VERHASH}"></script>
 <script type="text/javascript" src="$_G['style'][styleimgdir]js/jquery.flexslider.js?{VERHASH}"></script>
-
+<!--{if $_G['basescript'] == 'portal' && CURMODULE == 'index'}-->
  <script type="text/javascript">
    var jQuery = jQuery.noConflict();
     jQuery(window).load(function(){
@@ -205,6 +190,9 @@
       });
     });
   </script>
+<!--{/if}-->
+
+<script src="$_G['style'][styleimgdir]js/toTop.js?{VERHASH}"></script>
 
 <!--{/if}-->
 <!--{if isset($_G['makehtml'])}-->
